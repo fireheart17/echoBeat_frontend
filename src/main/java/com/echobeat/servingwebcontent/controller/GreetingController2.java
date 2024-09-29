@@ -1,4 +1,4 @@
-package com.echobeat.servingwebcontent;
+package com.echobeat.servingwebcontent.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
