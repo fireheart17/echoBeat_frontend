@@ -7,12 +7,13 @@
     <title>Echobeat</title>
     <link rel="stylesheet" th:href="@{/CSS/colors.css}">
     <link rel="stylesheet" th:href="@{/CSS/fyp_css.css}">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
 </head>
 
 <body>
 
 
-    <div class="hamburger-menu" id="hamburgerMenu">
+    <div class="hamburger-menu-sm" id="hamburgerMenu">
         &#9776;
     </div>
 
@@ -30,7 +31,18 @@
     </div>
 
 
+    <div class="navbar">
+        <a class="logo" href="main.html"><b>Echobeat</b></a>
+        <button class="hamburger-menu blocky">&nbsp;&nbsp;=&nbsp;&nbsp;</button>
+        <div class="navlinks">
+            <a class="link" href="blogs.html">Blogs</a>
+            <a class="link" href="topics.html">Topics</a>
+            <a class="link" href="about.html">About Us</a>
+            <a class="link blocky" href="login.html">Login</a>
+        </div>
+    </div>
 
+    <script th:src="@{/JavaScript/navbar.js}"></script>
 
     <div class="hero-section card">
         <div class="hero-text" id="hero-text">
