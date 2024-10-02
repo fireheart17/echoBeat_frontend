@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echobeat</title>
+    <link rel="stylesheet" th:href="@{/CSS/colors.css}">
+    <link rel="stylesheet" th:href="@{/CSS/fyp_css.css}">
+</head>
+
+<body>
+
+
+    <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+    </div>
+
+    <!-- Sliding Menu -->
+    <div class="sliding-menu" id="slidingMenu">
+        <div class="close-btn" id="closeBtn">&times;</div>
+        <input type="text" class="search-bar" placeholder="Search..." />
+        <div class="menu-cards">
+            <div class="menu-card">Menu Card 1</div>
+            <div class="menu-card">Menu Card 2</div>
+            <div class="menu-card">Menu Card 3</div>
+            <div class="menu-card">Menu Card 4</div>
+            <div class="menu-card">Menu Card 5</div>
+        </div>
+    </div>
+
+
+
+
+    <div class="hero-section card">
+        <div class="hero-text" id="hero-text">
+            <!-- Discover, Inspire, Connect: Your Blog for Everything Worth Sharing. -->
+
+        </div>
+        <div class="buttons">
+            <a class="explore-button" href="blogs.html">Liked Songs</a>
+            <a class="explore-button" href="blogs.html">Liked Playlists</a>
+            <a class="explore-button" href="blogs.html">Liked Podcasts</a>
+        </div>
+    </div>
+
+
+    <div class="wrapper">
+        <!-- Main card containing sub-cards -->
+        <script src="navbar.js"></script>
+        <div class="main-card">
+            <h2>Top Picks</h2>
+            <div class="sub-cards-container" id="subCardsContainer">
+                <div th:each="song : ${songs}" class="sub-card">
+                    <b><div th:text="${'song name: '+song}"></div></b>
+                </div>
+            </div>
+        </div>
+        <div class="main-card">
+            <h2>New releases</h2>
+            <div class="sub-cards-container" id="subCardsContainer">
+                <div th:each="song : ${songs}" class="sub-card">
+                    <a th:href="@{/songs/(id=3)}" class="song-link">
+                        <b><div th:text="${'song name: '+song}"></div></b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/JavaScript/fyp_script.js}"></script>
+</body>
+
+</html>
