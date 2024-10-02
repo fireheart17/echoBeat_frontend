@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" th:href="@{/CSS/colors.css}">
+    <link rel="stylesheet" th:href="@{/CSS/user_css.css}">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
+</head>
+<body>
+
+<div class="navbar">
+    <a class="logo" href="main.html"><b>Echobeat</b></a>
+    <button class="hamburger-menu blocky">&nbsp;&nbsp;=&nbsp;&nbsp;</button>
+    <div class="navlinks">
+        <a class="link" href="blogs.html">Blogs</a>
+        <a class="link" href="topics.html">Topics</a>
+        <a class="link" href="about.html">About Us</a>
+        <a class="link blocky" href="login.html">Login</a>
+    </div>
+</div>
+<script th:src="@{/JavaScript/navbar.js}"></script>
+
+<div th:each="user : ${user}">
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-pic">
+                <img src="profile-pic.jpg" alt="User Picture">
+            </div>
+            <div class="profile-info">
+                <h1 th:text="${user.firstName} + ' ' + ${user.lastName}"></h1>
+                <p><strong>Online:</strong> <span class="online-indicator">●</span></p>
+                <button class="btn" id="change-info-btn">Change User Information</button>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="about-me">
+                <h2>About Me</h2>
+                <table class="info-table">
+                    <tr>
+                        <td><strong>Member since:</strong></td>
+                        <td>April 26, 2015</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Years Listening:</strong></td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Birthday:</strong></td>
+                        <td>May 18, 1984</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="my-stats">
+                <h2>My Stats</h2>
+                <table class="info-table">
+                    <tr>
+                        <td><strong>Hours Listened:</strong></td>
+                        <td>1,024 hours</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Favorite Artist:</strong></td>
+                        <td>Adele</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Favorite Genre:</strong></td>
+                        <td>Pop</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-info-form" class="form-popup">
+        <div class="form-container">
+            <h2>Change User Information</h2>
+            <form id="user-form">
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" value="Janie Jones" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" value="New York, NY" required>
+
+                <label for="fav-artist">Favorite Artist:</label>
+                <input type="text" id="fav-artist" name="fav-artist" value="Adele" required>
+
+                <label for="fav-genre">Favorite Genre:</label>
+                <input type="text" id="fav-genre" name="fav-genre" value="Pop" required>
+
+                <button type="submit" class="btn">Save Changes</button>
+                <button type="button" class="btn cancel" id="close-form">Close</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="@{/JavaScript/user_script.js}"></script>
+</body>
+</html>
