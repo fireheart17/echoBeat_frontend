@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echobeat</title>
+    <link rel="stylesheet" th:href="@{/CSS/colors.css}">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
+    <link rel="stylesheet" th:href="@{/CSS/fyp_css.css}">
+</head>
+
+<body>
+
+    <div th:fragment="navbar">
+
+
+    <div class="navbar">
+        <a class="logo" href="/fyp"><b>EchoBeat</b></a>
+        <button class="hamburger-menu blocky">&nbsp;&nbsp;=&nbsp;&nbsp;</button>
+        <div class="navlinks">
+            <a class="link" href="blogs.html">Blogs</a>
+            <a class="link" href="topics.html">Topics</a>
+            <a class="link" href="/charts">Charts</a>
+            <a class="link blocky" href="/login">Login</a>
+        </div>
+    </div>
+
+    <script th:src="@{/JavaScript/navbar.js}"></script>
+</div>
+    
+</body>
+
+</html>
