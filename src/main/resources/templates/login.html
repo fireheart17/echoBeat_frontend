@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Login - EchoBeat</title>
+    <link rel="stylesheet" href="/CSS/login_styles.css">
+    <link rel="stylesheet" href="/CSS/colors.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h3 class="login-title">Login</h3>
+
+        <!-- Username Input -->
+        <div class="input-group">
+            <label for="username" color="black">Username</label>
+            <input class="custom-input" type="text" id="username" name="username" placeholder="username" required>
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input class="custom-input" type="password" id="password" name="password" placeholder="password" required>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <!-- <a href="/auth/recover" class="forgot-password">Forgot password?</a> -->
+
+        <!-- Login Button -->
+        <button class="login-button">Log In</button>
+
+        <!-- Invalid Credentials Message (Hidden by default) -->
+        <div class="error-message" id="userDoesNotExistWarning" style="display: none;">
+            Invalid credentials
+        </div>
+
+        <!-- GitHub Authentication Error (Hidden by default) -->
+        <div class="error-message" id="githubErrorWarning" style="display: none;">
+            GitHub authentication failed. User does not exist.
+        </div>
+
+
+        <a class="signup-link" href="/signup">You need an account, huh?</a>
+    </div>
+    <div class="background-container">
+        <div class="inner-container">
+            <div class="circle-left"></div>
+            <div class="circle-right"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
