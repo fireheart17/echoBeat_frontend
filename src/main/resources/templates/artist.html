@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <link rel="stylesheet" th:href="@{/CSS/artist_styles.css}">
+    <link rel="stylesheet" th:href="@{/CSS/style.css}">
+    <link rel="stylesheet" th:href="@{/CSS/colors.css}">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a class="logo" href="/fyp"><b>Echobeat</b></a>
+        <button class="hamburger-menu blocky">&nbsp;&nbsp;=&nbsp;&nbsp;</button>
+        <div class="navlinks">
+            <a class="link" href="blogs.html">Blogs</a>
+            <a class="link" href="topics.html">Topics</a>
+            <a class="link" href="/charts">Charts</a>
+            <a class="link blocky" href="/login">Login</a>
+        </div>
+    </div>
+
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-info">
+                <img src="https://avatars.githubusercontent.com/u/118014773?v=4" alt="User Image" class="profile-img">
+                <div class="profile-details">
+                    <h2>fireheart17</h2>
+                    <p class="followers">361 Followers</p>
+                    <p class="global-rank">Global Rank: #2318</p>
+                    <p class="country">Country: USA</p>
+                    <button class="follow-btn">Follow</button>
+                </div>
+            </div>
+            <div class="profile-nav">
+                <ul>
+                    <li><a href="#" class="active" onclick="showSection('overview')">Overview</a></li>
+                    <li><a href="#" onclick="showSection('songs')">Songs</a></li>
+                    <li><a href="#" onclick="showSection('albums')">Albums</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="overview">
+        <h3>About John Doe</h3>
+        <div class="about-container">
+            <p>
+                John Doe is a versatile singer and songwriter known for his soulful voice and heartfelt lyrics.
+                He has been active in the music industry for over a decade, producing chart-topping albums
+                and collaborating with renowned artists. His musical style blends pop, rock, and indie influences,
+                creating a unique sound that resonates with fans across the globe.
+            </p>
+            <p>
+                Born and raised in New York, John began his music career in small local clubs before gaining
+                international fame.
+                He continues to tour worldwide, bringing his music to fans in sold-out arenas and intimate venues alike.
+            </p>
+            <p>
+                In addition to his music, John is a passionate advocate for mental health awareness, regularly
+                supporting
+                causes that aim to make mental health care more accessible to all. His dedication to both his art and
+                his
+                activism has earned him numerous accolades and a loyal fan base.
+            </p>
+        </div>
+    </section>
+
+    <section class="hidden" id="songs">
+        <!-- <h3>Songs</h3>/ -->
+        <div class="song-list-container">
+            <!-- <h1>Top 50 Rock Songs</h1> -->
+            <ul id="songList">
+                <li th:each="song : ${songs}" class="song">
+                    <a th:href="${'/songs/'+song.id}" class="nlink" >
+                        <div th:text="${song.name}"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="hidden" id="albums">
+        <!-- <h3>Songs</h3>/ -->
+        <div class="album-list-container">
+            <!-- <h1>Top 50 Rock Songs</h1> -->
+            <ul id="albumList">
+                <li th:each="album : ${albums}" class="album">
+                    <a th:href="${'/albums/'+album.id}" class="nlink">
+                        <div th:text="${album.name}"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2024 EchoBeat</p>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.getElementById('overview').classList.add('hidden');
+            document.getElementById('songs').classList.add('hidden');
+            document.getElementById('albums').classList.add('hidden');
+
+            // Show the selected section
+            if (section === 'overview') {
+                document.getElementById('overview').classList.remove('hidden');
+            } else if (section === 'songs') {
+                document.getElementById('songs').classList.remove('hidden');
+            } else if (section === 'albums') {
+                document.getElementById('albums').classList.remove('hidden');
+            }
+
+            // Update the active link
+            const links = document.querySelectorAll('.profile-nav ul li a');
+            links.forEach(link => {
+                if (link.innerText.toLowerCase() === section) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Show overview section by default
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('overview');
+        });
+    </script>
+</body>
+
+</html>
