@@ -11,8 +11,6 @@
 </head>
 
 <body>
-
-
     <div class="hamburger-menu-sm" id="hamburgerMenu">
         &#9776;
     </div>
@@ -30,19 +28,7 @@
         </div>
     </div>
 
-
-    <div class="navbar">
-        <a class="logo" href="/fyp"><b>Echobeat</b></a>
-        <button class="hamburger-menu blocky">&nbsp;&nbsp;=&nbsp;&nbsp;</button>
-        <div class="navlinks">
-            <a class="link" href="blogs.html">Blogs</a>
-            <a class="link" href="topics.html">Topics</a>
-            <a class="link" href="/charts">Charts</a>
-            <a class="link blocky" href="/login">Login</a>
-        </div>
-    </div>
-
-    <script th:src="@{/JavaScript/navbar.js}"></script>
+    <div th:replace="fragments/navbar :: navbar"></div>
 
     <div class="hero-section card">
         <div class="hero-text" id="hero-text">
