@@ -26,21 +26,21 @@ public class fyp {
         List<String> songname = new ArrayList<>();
 
         // dummy api call
-        // Map<String, String>[] response = webClientBuilder.build()
-        //         .get()
-        //         .uri("https://jsonplaceholder.typicode.com/posts")
-        //         .retrieve()
-        //         .bodyToMono(new ParameterizedTypeReference<Map<String, String>[]>() {})
-        //         .block();
-
-        // System.out.println("response : "+Arrays.toString(response));
-
-        Map<String, String> response = webClientBuilder.build()
+        Map<String, String>[] response = webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8080/api/tracks/01zkbVsJQrtL1kwefeULG8")
+                .uri("https://jsonplaceholder.typicode.com/posts")
                 .retrieve()
-                .bodyToMono(new ParameterizedTypeReference<Map<String, String>>() {})
+                .bodyToMono(new ParameterizedTypeReference<Map<String, String>[]>() {})
                 .block();
+
+        System.out.println("response : "+Arrays.toString(response));
+
+        // Map<String, String> response = webClientBuilder.build()
+        //         .get()
+        //         .uri("http://localhost:8080/api/tracks/01zkbVsJQrtL1kwefeULG8")
+        //         .retrieve()
+        //         .bodyToMono(new ParameterizedTypeReference<Map<String, String>>() {})
+        //         .block();
 
         // System.out.println("response : "+response);
         songname.add("song1");
@@ -53,7 +53,7 @@ public class fyp {
         songname.add("song8");
         songname.add("song9");
         songname.add("song10");
-        songname.add(response.get("track_name"));
+        // songname.add(response.get("track_name"));
         model.addAttribute("songs", songname);
         return "fyp";
     }

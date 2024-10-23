@@ -1,4 +1,4 @@
-package com.echobeat.config;
+package com.echobeat.servingwebcontent.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
