@@ -23,38 +23,32 @@ public class fyp {
 
     @GetMapping("/fyp")
     public String getSong(Model model) {
-        List<String> songname = new ArrayList<>();
 
         // dummy api call
-        Map<String, String>[] response = webClientBuilder.build()
+        // Map<String, String>[] response = webClientBuilder.build()
+        //         .get()
+        //         .uri("https://jsonplaceholder.typicode.com/posts")
+        //         .retrieve()
+        //         .bodyToMono(new ParameterizedTypeReference<Map<String, String>[]>() {})
+        //         .block();
+
+        // System.out.println("response : "+Arrays.toString(response));
+
+        Map<String, String>[] topPicks = webClientBuilder.build()
                 .get()
-                .uri("https://jsonplaceholder.typicode.com/posts")
+                .uri("http://localhost:8081/api/toppicks")
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<Map<String, String>[]>() {})
+                .block();
+        Map<String, String>[] newTracks = webClientBuilder.build()
+                .get()
+                .uri("http://localhost:8081/api/newtracks")
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<Map<String, String>[]>() {})
                 .block();
 
-        System.out.println("response : "+Arrays.toString(response));
-
-        // Map<String, String> response = webClientBuilder.build()
-        //         .get()
-        //         .uri("http://localhost:8080/api/tracks/01zkbVsJQrtL1kwefeULG8")
-        //         .retrieve()
-        //         .bodyToMono(new ParameterizedTypeReference<Map<String, String>>() {})
-        //         .block();
-
-        // System.out.println("response : "+response);
-        songname.add("song1");
-        songname.add("song2");
-        songname.add("song3");
-        songname.add("song4");
-        songname.add("song5");
-        songname.add("song6");
-        songname.add("song7");
-        songname.add("song8");
-        songname.add("song9");
-        songname.add("song10");
-        // songname.add(response.get("track_name"));
-        model.addAttribute("songs", songname);
+        model.addAttribute("topPicks", topPicks);
+        model.addAttribute("newTracks", newTracks);
         return "fyp";
     }
 }

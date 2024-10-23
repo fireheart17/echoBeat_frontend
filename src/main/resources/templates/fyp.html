@@ -49,17 +49,17 @@
         <div class="main-card">
             <h2>Top Picks</h2>
             <div class="sub-cards-container" id="subCardsContainer">
-                <div th:each="song : ${songs}" class="sub-card">
-                    <b><div th:text="${'song name: '+song}"></div></b>
+                <div th:each="song : ${topPicks}" class="sub-card">
+                    <b><div th:text="${'song name: '+song.get('track_name')}"></div></b>
                 </div>
             </div>
         </div>
         <div class="main-card">
             <h2>New releases</h2>
             <div class="sub-cards-container" id="subCardsContainer">
-                <div th:each="song : ${songs}" class="sub-card">
+                <div th:each="song : ${newTracks}" class="sub-card">
                     <a th:href="@{/songs/(id=3)}" class="song-link">
-                        <b><div th:text="${'song name: '+song}"></div></b>
+                        <b><div th:text="${'song name: '+song.get('track_name')}"></div></b>
                     </a>
                 </div>
             </div>
