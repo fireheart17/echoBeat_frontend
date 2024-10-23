@@ -1,5 +1,4 @@
 package com.echobeat.servingwebcontent.model;
-
 public class LikedPodcasts {
 
 

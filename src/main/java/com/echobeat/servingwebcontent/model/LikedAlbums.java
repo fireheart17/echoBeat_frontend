@@ -1,5 +1,4 @@
 package com.echobeat.servingwebcontent.model;
-
 public class LikedAlbums {
 
     private long user_id;
