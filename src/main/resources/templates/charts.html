@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Charts</title>
+    <link rel="stylesheet" th:href="@{/CSS/chart_styles.css}">
+    <link rel="stylesheet" th:href="@{/CSS/colors.css}">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="charts-container">
+        <h1>Top Charts</h1>
+        <div th:each="chart : ${charts}" class="card" onclick = "/fyp">
+            <b><div th:text="${'chart name: '+chart.chart_type}"></div></b>
+        </div>
+    </div>
+
+    <script th:src="@{/JavaScript/chart_script.js}"></script>
+</body>
+</html>
