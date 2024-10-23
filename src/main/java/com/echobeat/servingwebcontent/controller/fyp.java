@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.core.ParameterizedTypeReference;
 import reactor.core.publisher.Mono;
-import java.util.*;
 
+import java.net.http.HttpHeaders;
+import java.util.*;
 @Controller
 public class fyp {
 
@@ -43,6 +44,17 @@ public class fyp {
         //         .block();
 
         // System.out.println("response : "+response);
+
+        // POST REQUEST
+        // webClientBuilder.build()
+        //         .post()
+        //         .uri(url)
+        //         .header(HttpHeaders.AUTHORIZATION, "Bearer " + authToken) // Set the Authorization header
+        //         .contentType(MediaType.APPLICATION_JSON) // Set the Content-Type to JSON
+        //         .bodyValue(requestBody) // Set the body
+        //         .retrieve()
+        //         .bodyToMono(Map.class); 
+
         songname.add("song1");
         songname.add("song2");
         songname.add("song3");
