@@ -50,7 +50,7 @@ public class fyp {
 
         model.addAttribute("topPicks", topPicks);
         model.addAttribute("newTracks", newTracks);
-        System.out.println("response : "+Arrays.toString(response));
+        // System.out.println("response : "+Arrays.toString(response));
 
         // Map<String, String> response = webClientBuilder.build()
         //         .get()
@@ -71,18 +71,18 @@ public class fyp {
         //         .retrieve()
         //         .bodyToMono(Map.class); 
 
-        songname.add("song1");
-        songname.add("song2");
-        songname.add("song3");
-        songname.add("song4");
-        songname.add("song5");
-        songname.add("song6");
-        songname.add("song7");
-        songname.add("song8");
-        songname.add("song9");
-        songname.add("song10");
-        // songname.add(response.get("track_name"));
-        model.addAttribute("songs", songname);
+        // songname.add("song1");
+        // songname.add("song2");
+        // songname.add("song3");
+        // songname.add("song4");
+        // songname.add("song5");
+        // songname.add("song6");
+        // songname.add("song7");
+        // songname.add("song8");
+        // songname.add("song9");
+        // songname.add("song10");
+        // // songname.add(response.get("track_name"));
+        // model.addAttribute("songs", songname);
         return "fyp";
     }
 }
