@@ -12,8 +12,8 @@
     <div th:replace="fragments/navbar :: navbar"></div>
     <div class="charts-container">
         <h1>Top Charts</h1>
-        <div th:each="chart : ${charts}" class="card" onclick = "/fyp">
-            <b><div th:text="${'chart name: '+chart.chart_type}"></div></b>
+        <div th:each="chart : ${charts}" class="card" th:onclick="'window.location.href=\'http://localhost:6969' + @{/chart/{id}(id=${chart.get('chart_id')})}">
+            <b><div th:text="${'chart name: '+chart.get('chart_type')}"></div></b>
         </div>
     </div>
 
