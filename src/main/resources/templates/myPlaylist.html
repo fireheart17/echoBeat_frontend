@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Playlist - Spotify Style</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+</head>
+<body>
+    <!-- Playlist Container -->
+    <div class="playlist-container">
+        <h1>My Playlist</h1>
+        <ul id="playlist">
+            <!-- Placeholder songs -->
+            <li class="song-item">
+                <span class="song-name">Blinding Lights - The Weeknd</span>
+                <span class="song-id">(ID: 101)</span>
+            </li>
+            <li class="song-item">
+                <span class="song-name">Levitating - Dua Lipa</span>
+                <span class="song-id">(ID: 102)</span>
+            </li>
+            <li class="song-item">
+                <span class="song-name">Watermelon Sugar - Harry Styles</span>
+                <span class="song-id">(ID: 103)</span>
+            </li>
+        </ul>
+
+        <!-- Add Song Button -->
+        <button id="addSongBtn" class="add-song-btn" onclick="openAddSongModal()">+ Add Song</button>
+    </div>
+
+    <!-- Modal for Adding Song -->
+    <div id="addSongModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddSongModal()">&times;</span>
+            <h2>Add a Song to Playlist</h2>
+            <form id="addSongForm" onsubmit="return addSongToPlaylist()">
+                <label for="songId">Enter Song ID:</label>
+                <input type="text" id="songId" name="songId" placeholder="e.g., 104" required>
+                <button type="submit" class="submit-btn">Add Song</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script> <!-- Link to JavaScript -->
+</body>
+</html>
