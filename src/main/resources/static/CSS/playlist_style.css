@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:whitesmoke; /* Spotify dark background */
+    color: #FFFFFF; /* White text */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: rgb(114, 96, 70); /* Spotify green */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Playlist Container */
+.playlist-container {
+    max-width: 600px;
+    margin: 2% auto;
+    padding: 20px;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+ul#playlist {
+    list-style: none;
+    padding: 0;
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.song-item:hover {
+    background-color:rgb(175, 154, 122) ;
+}
+
+.song-name {
+    font-weight: bold;
+}
+
+.song-id {
+    color: #888;
+}
+
+/* Add Song Button */
+.add-song-btn {
+    display: inline-block;
+    background-color: black;
+    color: #fff;
+    padding: 15px 30px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-song-btn:hover {
+    /* color: black;     */
+    background-color: rgb(175, 154, 122);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+label {
+    font-size: 16px;
+}
+
+input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #1DB954;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1ed760;
+}
