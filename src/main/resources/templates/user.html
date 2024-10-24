@@ -12,14 +12,14 @@
 
     <div th:replace="fragments/navbar :: navbar"></div>
 
-<div th:each="user : ${user}">
+<!-- <div th:each="user : ${user}"> -->
     <div class="profile-container">
         <div class="profile-header">
             <div class="profile-pic">
                 <img src="https://avatars.githubusercontent.com/u/118014773?v=4" alt="User Picture">
             </div>
             <div class="profile-info">
-                <h1 th:text="${user.firstName} + ' ' + ${user.lastName}"></h1>
+                <h1 th:text="${user.get('firstName')} + ' ' + ${user.get('lastName')}"></h1>
                 <p><strong>Online:</strong> <span class="online-indicator">●</span></p>
                 <button class="btn" id="change-info-btn">Change User Information</button>
             </div>
@@ -62,7 +62,7 @@
                 </table>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 
     <div id="user-info-form" class="form-popup">
         <div class="form-container">

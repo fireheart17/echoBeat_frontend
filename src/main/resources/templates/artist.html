@@ -15,16 +15,19 @@
 
     <div th:replace="fragments/navbar :: navbar"></div>
 
-
+    <!-- <div th:each="artist : ${artist}"> -->
     <section class="profile-section">
         <div class="profile-container">
             <div class="profile-info">
                 <img src="https://avatars.githubusercontent.com/u/118014773?v=4" alt="User Image" class="profile-img">
                 <div class="profile-details">
-                    <h2>fireheart17</h2>
-                    <p class="followers">361 Followers</p>
-                    <p class="global-rank">Global Rank: #2318</p>
-                    <p class="country">Country: USA</p>
+                    <h2 th:text="${artist.get('first_name') } + ${' '+ artist.get('last_name')}"></h2>
+                    <!-- <h2 th:text="${artist.password}">fireheart17</h2> -->
+                    <!-- <h2>fireheart17</h2> -->
+                    <p class="followers" th:text="${'#Followers: '+artist.get('follower_count')}"></p>
+                    <p class="global-rank" th:text="${'Global Rank: '+ artist.get('global_rank')}">Global Rank: #2318</p>
+                    <!-- <b><div th:text="${'song name: '+song.get('track_name')}"></div></b> -->
+                    <p class="country" th:text="${'Country: '+artist.get('country')}">Country: USA</p>
                     <button class="follow-btn">Follow</button>
                 </div>
             </div>
@@ -37,11 +40,12 @@
             </div>
         </div>
     </section>
+    <!-- </div> -->
 
     <section class="about-section" id="overview">
-        <h3>About fireheart17</h3>
-        <div class="about-container">
-            <p>
+        <h3  th:text="'About '+ ${artist.get('first_name')}"></h3>
+        <div class="about-container" th:text="${artist.get('about')}">
+            <!-- <p>
                 fireheart17 took over pop music & culture on his own terms filtering R&B, Pop,& hip-hop through an ambitious widescreen lens. The multi-platinum 3X GRAMMY Award winner has emerged as one of the most successful & significant artists of the modern era.
             </p>
             <p>
@@ -55,7 +59,7 @@
                 causes that aim to make mental health care more accessible to all. His dedication to both his art and
                 his
                 activism has earned him numerous accolades and a loyal fan base. His album "savage fireheart17" held the #1 spot on Billboard 200 for 4 consecutive weeks, marking his 4th #1 album & becoming the first to ever rank #1 on the Billboard 200, Hot 100, and Artist 100 simultaneously.
-            </p>
+            </p> -->
         </div>
     </section>
 
@@ -64,10 +68,10 @@
         <div class="song-list-container">
             <!-- <h1>Top 50 Rock Songs</h1> -->
             <ul id="songList">
-                <li th:each="song : ${songs}" class="song">
-                    <a th:href="${'/songs/'+song.id}" class="nlink" >
-                        <div th:text="${song.name}"></div>
-                    </a>
+                <li th:each="track : ${tracks}" class="song">
+                    <!-- <a th:href="${'/songs/'+song.id}" class="nlink" > -->
+                        <div th:text="${track.get('track_name')}"></div>
+                    <!-- </a> -->
                 </li>
             </ul>
         </div>
@@ -80,8 +84,8 @@
             <!-- <h1>Top 50 Rock Songs</h1> -->
             <ul id="albumList">
                 <li th:each="album : ${albums}" class="album">
-                    <a th:href="${'/albums/'+album.id}" class="nlink">
-                        <div th:text="${album.name}"></div>
+                    <a th:href="${'/albums/'}" class="nlink">
+                        <div th:text="${album.get('title')}">hello</div>
                     </a>
                 </li>
             </ul>
