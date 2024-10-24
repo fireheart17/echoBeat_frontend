@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Page</title>
+    <link rel="stylesheet" th:href="@{/CSS/chart_styles.css}">
+    <link rel="stylesheet" th:href="@{/CSS/colors.css}">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .play-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            
+            font-size: 3em;
+            color: rgb(71, 61, 46);
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        ul li a {
+            text-decoration: none;
+            color: white;
+            background-color: rgb(71, 61, 46);
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        ul li a:hover {
+            background-color: blanchedalmond;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="play-container">
+        <h1>Liked Songs</h1>
+        <div class="song-list-container">
+            <ul th:each="song : ${likedSongs}">
+                <li onclick="window.location.href='player.html?songId=1'"><div th:text="${song.get('track_name')}"></div></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

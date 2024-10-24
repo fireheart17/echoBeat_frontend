@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify Player</title>
+    <link rel="stylesheet" th:href="@{/CSS/player_styles.css}"/>
+    <script th:src="@{/JavaScript/player_script.js}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Spotify Player</h1>
+        
+        <div th:if="${tracks}">
+            <h2>Your Playlist</h2>
+            <ul>
+                <li th:each="track : ${tracks}">
+                    <span th:text="${track.name}"></span> - 
+                    <span th:text="${track.artists[0].name}"></span>
+                    <button th:onclick="'playTrack(\'' + ${track.id} + '\')'" type="button">Play</button>
+                </li>
+            </ul>
+        </div>
+        
+        <div th:if="${empty tracks}">
+            <p>No tracks available. Please log in to Spotify.</p>
+        </div>
+
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+</body>
+</html>

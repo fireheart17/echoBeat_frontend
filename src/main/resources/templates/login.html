@@ -17,7 +17,7 @@
 
     <div class="login-container">
         <h3 class="login-title">Login</h3>
-
+        <form action="/login" method="post">
         <!-- Username Input -->
         <div class="input-group">
             <label for="username" color="black">Username</label>
@@ -34,16 +34,12 @@
         <!-- <a href="/auth/recover" class="forgot-password">Forgot password?</a> -->
 
         <!-- Login Button -->
-        <button class="login-button">Log In</button>
+        <button class="login-button" type="submit">Log In</button>
+        </form>
 
         <!-- Invalid Credentials Message (Hidden by default) -->
         <div class="error-message" id="userDoesNotExistWarning" style="display: none;">
             Invalid credentials
-        </div>
-
-        <!-- GitHub Authentication Error (Hidden by default) -->
-        <div class="error-message" id="githubErrorWarning" style="display: none;">
-            GitHub authentication failed. User does not exist.
         </div>
 
 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Playlist - Spotify Style</title>
+    <link rel="stylesheet" th:href="@{/CSS/playlist_style.css}">
+    <link rel="stylesheet" th:href="@{/CSS/colors.css}">
+    <link rel="stylesheet" th:href="@{/CSS/navbar.css}">
+</head>
+<body>
+    <!-- Playlist Container -->
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <div class="playlist-container">
+        <h1><div th:text="${title.get('title')}"></div></h1>
+        <ul id = "playlist" th:each="song : ${Playlistsongs}">
+            <li class="song-item" onclick="window.location.href='player.html?songId=1'"><div th:text="${song.get('track_name')}"></div></li>
+        </ul>
+</body>
+</html>
