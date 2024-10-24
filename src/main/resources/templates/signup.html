@@ -19,6 +19,7 @@
         <h3 class="login-title">Sign Up</h3>
 
         <!-- Username Input -->
+         <form action="/signup" method="post">
         <div class="input-group">
             <!-- <label for="username">Username</label> -->
             <input class="custom-input" type="text" id="username" name="username" placeholder="username" required>
@@ -34,11 +35,11 @@
 
         <div class="input-group"></div>
         <!-- <label for="first-name">First Name</label> -->
-        <input class="custom-input" type="text" id="first-name" name="first-name" placeholder="firstname" required>
+        <input class="custom-input" type="text" id="first-name" name="first_name" placeholder="firstname" required>
 
         <div class="input-group"></div>
         <!-- <label for="last-name">Last Name</label> -->
-        <input class="custom-input" type="text" id="last-name" name="last-name" placeholder="lastname" required>
+        <input class="custom-input" type="text" id="last-name" name="last_name" placeholder="lastname" required>
 
         <div class="input-group"></div>
         <!-- <label for="dob">Date of Birth</label> -->
@@ -55,7 +56,8 @@
 
         <!-- Login Button -->
         <div class="input-group"></div>
-        <button class="login-button">Sign up</button>
+        <button class="login-button" type="submit">Sign up</button>
+        </form>
 
     </div>
     </div>
