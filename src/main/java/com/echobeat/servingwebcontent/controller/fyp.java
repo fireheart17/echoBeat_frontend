@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
+
 import reactor.core.publisher.Mono;
 
 import java.util.*;
+
+import org.springframework.web.bind.annotation.CookieValue;
 
 
 @Controller
@@ -27,7 +30,11 @@ public class fyp {
     private WebClient.Builder webClientBuilder;
 
     @GetMapping("/fyp")
-    public String getSong(Model model) {
+    public String getSong(Model model,@CookieValue(value="token",defaultValue="") String token) {
+        
+        if(token.equals("")){
+            return "redirect:/login";
+        }
 
         // dummy api call
         // Map<String, String>[] response = webClientBuilder.build()
@@ -38,6 +45,11 @@ public class fyp {
         //         .block();
 
         // System.out.println("response : "+Arrays.toString(response));
+
+        
+        // AUTH HEADER
+        // .header("Authorization","Bearer "+token)
+
 
         Map<String, String>[] topPicks = webClientBuilder.build()
                 .get()
