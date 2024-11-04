@@ -15,7 +15,7 @@ public class likedSongs {
     private WebClient.Builder webClientBuilder;
 
     @GetMapping("/user/likedSongs")
-    public String getLikedSongs(@RequestParam(name="id", required=false, defaultValue="0") String name, Model model) {
+    public String getLikedSongs(@RequestParam(name="id", required=false, defaultValue="1") String name, Model model) {
 
         Map<String, String>[] response = webClientBuilder.build()
         .get()
